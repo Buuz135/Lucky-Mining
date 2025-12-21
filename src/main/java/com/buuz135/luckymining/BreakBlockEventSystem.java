@@ -40,20 +40,16 @@ public class BreakBlockEventSystem extends EntityEventSystem<EntityStore, BreakB
 
         var block = event.getBlockType().getId();
         if (block.equals("Empty")) return;
-        var uuid = player.getUuid();
+        var uuid = store.getComponent(ref, PlayerRef.getComponentType()).getUuid();
         if (luckyMiningInfo.containsKey(uuid)) {
             if ((System.currentTimeMillis() > (luckyMiningInfo.get(uuid).lastBreak + (this.config.get().getMaxTime() * 1000L))) || !luckyMiningInfo.get(uuid).block.equals(block)) {
                 luckyMiningInfo.remove(uuid);
-                //int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Metal_Break");
-                //player.playSoundEvent2d(soundEventIndex, SoundCategory.SFX);
             }
         }
 
         for (String whitelistOre : this.config.get().getWhitelistOres()) {
             if (block.contains(whitelistOre)) {
                 if (luckyMiningInfo.containsKey(uuid) && random.nextDouble() < luckyMiningInfo.get(uuid).chance) {
-                    //int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Crystal_Break");
-                    //player.playSoundEvent2d(soundEventIndex, SoundCategory.SFX);
 
                     Vector3d position = new Vector3d(event.getTargetBlock().x + 0.5, event.getTargetBlock().y + 0.5, event.getTargetBlock().z + 0.5);
                     ParticleUtils.spawnParticleEffect("Alerted", position, store);
