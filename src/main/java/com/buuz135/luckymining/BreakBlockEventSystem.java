@@ -10,7 +10,7 @@ import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.ecs.BreakBlockEvent;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.hypixel.hytale.server.core.universe.world.ParticleUtils;
+import com.hypixel.hytale.server.core.universe.world.ParticleUtil;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.Config;
 
@@ -52,7 +52,7 @@ public class BreakBlockEventSystem extends EntityEventSystem<EntityStore, BreakB
                 if (luckyMiningInfo.containsKey(uuid) && random.nextDouble() < luckyMiningInfo.get(uuid).chance) {
 
                     Vector3d position = new Vector3d(event.getTargetBlock().x + 0.5, event.getTargetBlock().y + 0.5, event.getTargetBlock().z + 0.5);
-                    ParticleUtils.spawnParticleEffect("Alerted", position, store);
+                    ParticleUtil.spawnParticleEffect("Alerted", position, store);
                     new Thread(() -> {
                         try {
                             Thread.sleep(1500);

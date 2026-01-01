@@ -1,17 +1,18 @@
 {
-  "Group": "${group}",
-  "Name": "${name}",
-  "Version": "${version}",
-  "Description": "${description}",
+  "Group": "Buuz135",
+  "Name": "LuckyMining",
+  "Version": "1.0.1",
+  "Description": "A mod to get more ores from mining, the more you mine in a row, the more ores you get.",
   "Authors": [
     {
       "Name": "Buuz135"
     }
   ],
-  "Website": "${website}",
-  "ServerVersion": "${server_version}",
+  "Website": "https://buuz135.com",
+  "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},
   "DisabledByDefault": false,
-  "Main": "${entry_point}"
+  "Main": "com.buuz135.luckymining.LuckyMining",
+  "IncludesAssetPack": true
 }
