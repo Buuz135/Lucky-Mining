@@ -19,11 +19,15 @@ public class LMConfig {
             .append(new KeyedCodec<String[]>("WhitelistOres", Codec.STRING_ARRAY),
                     (LMConfig, strings, extraInfo) -> LMConfig.whitelistOres = strings,
                     (LMConfig, extraInfo) -> LMConfig.whitelistOres).add()
+            .append(new KeyedCodec<String[]>("StoneReplaceableWhitelist", Codec.STRING_ARRAY),
+                    (LMConfig, strings, extraInfo) -> LMConfig.whitelistReplaceBlocks = strings,
+                    (LMConfig, extraInfo) -> LMConfig.whitelistReplaceBlocks).add()
             .build();
 
     private double LuckStartChance = 0.40;
     private double LuckIncreaseChance = 0.02;
     private String[] whitelistOres = new String[]{"Ore_Adamantite_", "Ore_Cobalt_", "Ore_Copper_", "Ore_Gold_", "Ore_Iron_", "Ore_Mithril_", "Ore_Onyxium_", "Ore_Silver_", "Ore_Thorium"};
+    private String[] whitelistReplaceBlocks = new String[]{"Rock_Basalt", "Rock_Shale", "Rock_Slate", "Rock_Stone", "Rock_Volcanic"};
     private int MaxTimeBetweenBlockBreaksInSeconds = 3;
 
     public LMConfig() {
@@ -44,5 +48,9 @@ public class LMConfig {
 
     public int getMaxTime() {
         return MaxTimeBetweenBlockBreaksInSeconds;
+    }
+
+    public String[] getWhitelistReplaceBlocks() {
+        return whitelistReplaceBlocks;
     }
 }

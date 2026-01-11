@@ -1,0 +1,16 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/Buuz135_LuckyMining_Lucky.ogg"
+      ],
+      "Volume": 10,
+      "RandomSettings": {
+        "MinPitch": 0,
+        "MaxPitch": 4
+      }
+    }
+  ],
+  "Volume": 10,
+  "Parent": "SFX_Attn_Loud"
+}

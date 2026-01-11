@@ -10,10 +10,6 @@ import java.io.IOException;
 
 public class LuckyMining extends JavaPlugin {
 
-    public static void main(String[] args) throws IOException {
-        com.hypixel.hytale.Main.main(new String[]{"--allow-op","--assets=C:\\Users\\buuz1\\AppData\\Roaming\\Hytale\\install\\release\\package\\game\\latest\\Assets", "--packs=C:\\Users\\buuz1\\AppData\\Roaming\\Hytale\\UserData\\Packs"});
-    }
-
     private final Config<LMConfig> config;
 
 
@@ -25,6 +21,7 @@ public class LuckyMining extends JavaPlugin {
     @Override
     protected void setup() {
         super.setup();
+        this.config.save();
         this.getEntityStoreRegistry().registerSystem(new BreakBlockEventSystem(config));
     }
 

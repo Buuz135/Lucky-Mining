@@ -1,0 +1,23 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Buuz135_LuckyMining_Spawn",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "InitialVelocity": {
+        "Pitch": {
+          "Min": 90,
+          "Max": 90
+        },
+        "Speed": {
+          "Min": 0.01,
+          "Max": 0.05
+        }
+      }
+    }
+  ],
+  "LifeSpan": 1.0
+}
