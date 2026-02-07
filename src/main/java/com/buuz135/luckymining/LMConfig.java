@@ -26,8 +26,8 @@ public class LMConfig {
 
     private double LuckStartChance = 0.40;
     private double LuckIncreaseChance = 0.02;
-    private String[] whitelistOres = new String[]{"Ore_Adamantite_", "Ore_Cobalt_", "Ore_Copper_", "Ore_Gold_", "Ore_Iron_", "Ore_Mithril_", "Ore_Onyxium_", "Ore_Silver_", "Ore_Thorium"};
-    private String[] whitelistReplaceBlocks = new String[]{"Rock_Basalt", "Rock_Shale", "Rock_Slate", "Rock_Stone", "Rock_Volcanic"};
+    private String[] whitelistOres = new String[]{"Ore_Adamantite_", "Ore_Cobalt_", "Ore_Copper_", "Ore_Gold_", "Ore_Iron_", "Ore_Mithril_", "Ore_Onyxium_", "Ore_Silver_", "Ore_Thorium_"};
+    private String[] whitelistReplaceBlocks = new String[]{"Rock_Basalt", "Rock_Shale", "Rock_Slate", "Rock_Stone", "Rock_Volcanic", "Rock_Sandstone", "Rock_Sandstone_Red", "_Cracked"};
     private int MaxTimeBetweenBlockBreaksInSeconds = 3;
 
     public LMConfig() {

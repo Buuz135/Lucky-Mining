@@ -57,7 +57,7 @@ public class BreakBlockEventSystem extends EntityEventSystem<EntityStore, BreakB
 
                     for (var direction : checking) {
                         var blockType = player.getWorld().getBlockType((int) (direction.x + event.getTargetBlock().x), (int) (direction.y + event.getTargetBlock().y), (int) (direction.z + event.getTargetBlock().z));
-                        if (Arrays.asList(this.config.get().getWhitelistReplaceBlocks()).contains(blockType.getId())
+                        if (Arrays.asList(this.config.get().getWhitelistReplaceBlocks()).stream().anyMatch(s -> blockType.getId().contains(s))
                                 && anyAirBlockOrOre(player.getWorld(), (int) (direction.x + event.getTargetBlock().x), (int) (direction.y + event.getTargetBlock().y), (int) (direction.z + event.getTargetBlock().z), block)) {
                             positions.add(new Vector3d(direction.x + event.getTargetBlock().x, direction.y + event.getTargetBlock().y, direction.z + event.getTargetBlock().z));
                         }
@@ -68,7 +68,7 @@ public class BreakBlockEventSystem extends EntityEventSystem<EntityStore, BreakB
                             for (int y = -1; y < 1; y++) {
                                 for (int z = -1; z < 1; z++) {
                                     var blockType = player.getWorld().getBlockType(x + event.getTargetBlock().x, y + event.getTargetBlock().y, z + event.getTargetBlock().z);
-                                    if (Arrays.asList(this.config.get().getWhitelistReplaceBlocks()).contains(blockType.getId())
+                                    if (Arrays.asList(this.config.get().getWhitelistReplaceBlocks()).stream().anyMatch(s -> blockType.getId().contains(s))
                                             && anyAirBlockOrOre(player.getWorld(), x + event.getTargetBlock().x, y + event.getTargetBlock().y, z + event.getTargetBlock().z, block)) {
                                         positions.add(new Vector3d(x + event.getTargetBlock().x, y + event.getTargetBlock().y, z + event.getTargetBlock().z));
                                     }
